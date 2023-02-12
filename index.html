@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Countries quiz</title>
+</head>
+<body>
+    <h1>Countries quiz</h1>
+
+    <div class="game-area">
+        <div class="controls-area">
+            <button data-type="capitals" class="btn">By capital</button>
+            <button data-type="flags" class="btn">By flag</button>
+            <button data-type="landmark" class="btn">By landmark</button>
+        </div>
+    
+        <div class="question">
+            <div class="flex">
+                <div class="img"></div>
+                <div>?</div>
+                <div class="img"></div>
+            </div>
+            <button data-type="submit" class="btn">Check</button>
+        </div>
+    </div>
+    <div class="score-area">
+        <p class="scores">Correct answers <span id="correct">  0</span></p>
+        <p class="scores">Incorrect answers <span id="incorrect">  0</span></p>
+    </div>
+
+    <script src="assets/js/script.js"></script>   
+</body>
+</html>

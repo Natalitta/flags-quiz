@@ -50,3 +50,22 @@ document.addEventListener("DOMContentLoaded", function() {
     function displayFlagQuestion() {
         document.getElementsByTagName("img").textContent = operand1;
     }
+
+    function displayLandmarkQuestion() {
+        document.getElementsByTagName("img").textContent = operand1;
+    }
+
+    function checkAnswer() {
+
+    }
+
+    function calculateCorrectAnswer() {
+
+    }
+
+    function incrementScore() {
+
+    }
+    function incrementWrongAnswer() {
+
+    }

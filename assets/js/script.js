@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
+
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
@@ -30,29 +31,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
         };  
 
-        for (let i=0; i< randomImg; i++) {  
-            let number = Math.floor(Math.random()*randomImg.length); 
-            document.getElementById("result").innerHTML += '<img src='+ randomImg[number]>'; 
+        let flag = document.getElementsByTagName("img");
+        let img = Math.floor(Math.random()); 
+        
         } 
     }   
             
     
         if (gameType === "flag") {
-            displayFlagQuestion(num1, num2);
+            displayFlagQuestion(img1);
         } else if (gameType === "landmark") {
-            displayLandmarkQuestion(num1, num2);
+            displayLandmarkQuestion(img2);
         }   else {
             alert(`Unknown game type: ${gameType}`);
             throw `Unknown game type: ${gameType}. Aborting!`;
         }
     }
 
-    function displayFlagQuestion() {
-        document.getElementsByTagName("img").textContent = operand1;
+    function displayFlagQuestion(src, width, height, alt) {
+        let flagImg = document.createElement("img");
+        flagImg.src = "./images/flags/canada-flag.jpg";
+        document.body.appendChild(img);
+
     }
 
-    function displayLandmarkQuestion() {
-        document.getElementsByTagName("img").textContent = operand1;
+    function displayLandmarkQuestion(operand2) {
+        document.getElementsByTagName("img").textContent = operand2;
     }
 
     function checkAnswer() {

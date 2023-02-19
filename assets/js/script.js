@@ -1,5 +1,7 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
+    let displayFlag = null;
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
@@ -46,47 +48,59 @@ document.addEventListener("DOMContentLoaded", function() {
         flagImg[3] = 'assets/images/flags/japan-flag.jpg';
         flagImg[4] = 'assets/images/flags/morocco-flag.jpg';
         flagImg[5] = 'assets/images/flags/spain-flag.jpg';
-        flagImg[6] = 'assets/images/flags/uk-flag.jpg';
+        flagImg[6] = 'assets/images/flags/france-flag.jpg';
         flagImg[7] = 'assets/images/flags/ukraine-flag.jpg';
+        flagImg[8] = 'assets/images/flags/brazil-flag.jpg';
+        flagImg[9] = 'assets/images/flags/australia-flag.jpg';
        
-        let displayFlag = Math.floor(Math.random() * flagImg.length);
+        displayFlag = Math.floor(Math.random() * flagImg.length);
         return document.getElementById("flag-image").innerHTML = '<img src="'+flagImg[displayFlag]+'" class="img">';
         
     }
-
-
-    function displayLandmarkQuestion() {
-        
-    }
-
     function checkAnswer() {
-        let userAnswer = document.getElementById("answer-box").value;
-        let correctAnswer = rightAnswer();
-        let isCorrect = userAnswer === rightAnswer[0];
-
+        let userAnswer = document.getElementById("answer-box").value.toLowerCase();
+        let correctAnswer = rightAnswer().toLowerCase();
+        let isCorrect = userAnswer === correctAnswer;
+   
     if (isCorrect) {
         alert("Well done! You got it right!");
         incrementScore();
     } else {
-        alert(`Awww... you answered ${userAnswer}. The correct country was ${rightAnswer[0]}!`);
+        alert(`Awww... you answered ${userAnswer}. The correct country was ${correctAnswer.toUpperCase()}!`);
         incrementWrongAnswer();
     }
-    runGame(correctAnswer[1]);
-
+    runGame("flag");
+   
+    }
+   
+    function rightAnswer() {        
+        if (displayFlag === 0) {
+             return "canada"
+        } else if (displayFlag === 1) {
+            return "germany"
+        } else if (displayFlag === 2) {
+            return "ireland"
+        } else if (displayFlag === 3) {
+            return "japan"
+        } else if (displayFlag === 4) {
+            return "morocco"
+        } else if (displayFlag === 5) {
+            return "spain"
+        } else if (displayFlag === 6) {
+            return "france"
+        } else if (displayFlag === 7) {
+            return "ukraine"
+        } else if (displayFlag === 8) {
+            return "brazil"
+        } else if (displayFlag === 9) {
+            return "australia"
+        } else {
+            alert("Sorry, it's a wrong country");
+        }
     }
 
-    function rightAnswer() {
+    function displayLandmarkQuestion() {
         
-        if (flagImg[0] === userAnswer.value("CANADA")){
-            } else if (flagImg[1] === userAnswer.value("GERMANY")) {
-            } else if (flagImg[2] === userAnswer.value("IRELAND")) {
-            } else if (flagImg[1] === userAnswer.value("JAPAN")) {
-            } else if (flagImg[1] === userAnswer.value("MOROCCO")) {
-            } else if (flagImg[1] === userAnswer.value("SPAIN")) {
-            } else if (flagImg[1] === userAnswer.value("UK")) {
-            } else if (flagImg[1] === userAnswer.value("UKRAINE")) {
-            
-
     }
 
     function incrementScore() {

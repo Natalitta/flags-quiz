@@ -25,45 +25,67 @@ document.addEventListener("DOMContentLoaded", function() {
     function runGame(gameType) {
 
         document.getElementById("answer-box").value = "";
-        document.getElementById("answer-box").focus();
-
-        let randomImg = flags{
-
-        };  
-
-        let flag = document.getElementsByTagName("img");
-        let img = Math.floor(Math.random()); 
-        
-        } 
-    }   
-            
+        document.getElementById("answer-box").focus();         
     
         if (gameType === "flag") {
-            displayFlagQuestion(img1);
+            displayFlagImage();
         } else if (gameType === "landmark") {
-            displayLandmarkQuestion(img2);
+            displayLandmarkQuestion();
         }   else {
             alert(`Unknown game type: ${gameType}`);
             throw `Unknown game type: ${gameType}. Aborting!`;
         }
     }
 
-    function displayFlagQuestion(src, width, height, alt) {
-        let flagImg = document.createElement("img");
-        flagImg.src = "./images/flags/canada-flag.jpg";
-        document.body.appendChild(img);
+    function displayFlagImage() {
 
+        let flagImg = new Array (); 
+        flagImg[0] = 'assets/images/flags/canada-flag.jpg';
+        flagImg[1] = 'assets/images/flags/germany-flag.jpg';
+        flagImg[2] = 'assets/images/flags/ireland-flag.jpg';
+        flagImg[3] = 'assets/images/flags/japan-flag.jpg';
+        flagImg[4] = 'assets/images/flags/morocco-flag.jpg';
+        flagImg[5] = 'assets/images/flags/spain-flag.jpg';
+        flagImg[6] = 'assets/images/flags/uk-flag.jpg';
+        flagImg[7] = 'assets/images/flags/ukraine-flag.jpg';
+       
+        let displayFlag = Math.floor(Math.random() * flagImg.length);
+        return document.getElementById("flag-image").innerHTML = '<img src="'+flagImg[displayFlag]+'" class="img">';
+        
     }
 
-    function displayLandmarkQuestion(operand2) {
-        document.getElementsByTagName("img").textContent = operand2;
+
+    function displayLandmarkQuestion() {
+        
     }
 
     function checkAnswer() {
+        let userAnswer = document.getElementById("answer-box").value;
+        let correctAnswer = rightAnswer();
+        let isCorrect = userAnswer === rightAnswer[0];
+
+    if (isCorrect) {
+        alert("Well done! You got it right!");
+        incrementScore();
+    } else {
+        alert(`Awww... you answered ${userAnswer}. The correct country was ${rightAnswer[0]}!`);
+        incrementWrongAnswer();
+    }
+    runGame(correctAnswer[1]);
 
     }
 
-    function calculateCorrectAnswer() {
+    function rightAnswer() {
+        
+        if (flagImg[0] === userAnswer.value("CANADA")){
+            } else if (flagImg[1] === userAnswer.value("GERMANY")) {
+            } else if (flagImg[2] === userAnswer.value("IRELAND")) {
+            } else if (flagImg[1] === userAnswer.value("JAPAN")) {
+            } else if (flagImg[1] === userAnswer.value("MOROCCO")) {
+            } else if (flagImg[1] === userAnswer.value("SPAIN")) {
+            } else if (flagImg[1] === userAnswer.value("UK")) {
+            } else if (flagImg[1] === userAnswer.value("UKRAINE")) {
+            
 
     }
 

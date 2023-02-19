@@ -48,10 +48,10 @@ h1 {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.3px;
-    background-color: white;
     color: #31384d;
     margin: 20px auto;
-    border: 1px solid #46506e;
+    padding: 2px;
+    border: 2px solid white;
     border-radius: 30px;
 }
 input {

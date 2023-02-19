@@ -1,8 +1,7 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
-    let displayFlag = null;
-
+    let displayFlag;
+    
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
@@ -31,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
         if (gameType === "flag") {
             displayFlagImage();
-        } else if (gameType === "landmark") {
-            displayLandmarkQuestion();
         }   else {
             alert(`Unknown game type: ${gameType}`);
             throw `Unknown game type: ${gameType}. Aborting!`;
@@ -52,11 +49,17 @@ document.addEventListener("DOMContentLoaded", function() {
         flagImg[7] = 'assets/images/flags/ukraine-flag.jpg';
         flagImg[8] = 'assets/images/flags/brazil-flag.jpg';
         flagImg[9] = 'assets/images/flags/australia-flag.jpg';
+        flagImg[10] = 'assets/images/flags/croatia-flag.jpg';
+        flagImg[11] = 'assets/images/flags/cambodia-flag.jpg';
+        flagImg[12] = 'assets/images/flags/argentina-flag.jpg';
+        flagImg[13] = 'assets/images/flags/georgia-flag.jpg';
+        flagImg[14] = 'assets/images/flags/india-flag.jpg';
        
         displayFlag = Math.floor(Math.random() * flagImg.length);
-        return document.getElementById("flag-image").innerHTML = '<img src="'+flagImg[displayFlag]+'" class="img">';
+        return document.getElementById("image").innerHTML = '<img src="'+flagImg[displayFlag]+'" class="img">';
         
     }
+
     function checkAnswer() {
         let userAnswer = document.getElementById("answer-box").value.toLowerCase();
         let correctAnswer = rightAnswer().toLowerCase();
@@ -70,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
         incrementWrongAnswer();
     }
     runGame("flag");
-   
     }
    
     function rightAnswer() {        
@@ -94,18 +96,26 @@ document.addEventListener("DOMContentLoaded", function() {
             return "brazil"
         } else if (displayFlag === 9) {
             return "australia"
+        } else if (displayFlag === 10) {
+            return "croatia"
+        } else if (displayFlag === 11) {
+            return "cambodia"
+        } else if (displayFlag === 12) {
+            return "argentina"
+        } else if (displayFlag === 13) {
+            return "georgia"
+        } else if (displayFlag === 14) {
+            return "india"
         } else {
             alert("Sorry, it's a wrong country");
         }
     }
-
-    function displayLandmarkQuestion() {
-        
-    }
-
+            
     function incrementScore() {
-
+        let oldScore = parseInt(document.getElementById("correct").innerText);
+        document.getElementById("correct").innerText = ++oldScore;
     }
     function incrementWrongAnswer() {
-
+        let oldScore = parseInt(document.getElementById("incorrect").innerText);
+        document.getElementById("incorrect").innerText = ++oldScore;
     }

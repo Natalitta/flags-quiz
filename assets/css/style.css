@@ -5,7 +5,7 @@ body {
     text-align: center;
 }
 h1 {
-    margin-top: 20px;
+    margin-top: 15px;
     text-transform: uppercase;
 }
 .game-area {
@@ -13,20 +13,19 @@ h1 {
     box-sizing: border-box;
     width: 80%;
     height: 100vh;
-    max-height: 480px;
+    max-height: 500px;
     max-width: 820px;
     margin-left: auto;
     margin-right: auto;
-    padding: 2%;
     border-radius: 30px;
 }
 .controls-area {
-    width: 90%;
-    margin: 0 auto;
+    width: 50%;
+    margin: 2% auto;
 }
 .btn {
     width: 150px;
-    height: 40px;
+    height: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
@@ -35,7 +34,7 @@ h1 {
     color: #31384d;
     border: 1px solid #46506e;
     border-radius: 30px;
-    margin: 0 10px;
+    margin: 2% auto;
 }
 .btn:active,
 .btn:hover {
@@ -60,7 +59,7 @@ input {
     border: 1px solid #46506e;
     border-radius: 30px;
     line-height: 2em;
-    width: 250px;
+    width: 200px;
     display: block;
     margin: 20px auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

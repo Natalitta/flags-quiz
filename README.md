@@ -35,7 +35,7 @@ Flags Quiz is a game to help people learn flags of different countries. This gam
 
 ## Features Left to Implement
 
-* I would like to add all countries' flags in the future.
+* I would like to add all world countries' flags in the future.
 
 ## Testing
 #### The testing was done in browsers: 

@@ -64,6 +64,10 @@ Flags Quiz is a game to help people learn flags of different countries. This gam
 
 <img src="assets/images/css-check.png" alt="CSS Flags quiz validation">
 
+* Lighthouse testing shows such results:
+
+<img src="assets/images/lighthouse.png" alt="Lighthouse testing results of Flags quiz">
+
 ### Unfixed Bugs
 No unfixed bugs.
 

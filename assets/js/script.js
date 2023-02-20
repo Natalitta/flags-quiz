@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
-    let displayFlag;
+    let displayFlag = null;
     
     for (let button of buttons) {
         button.addEventListener("click", function() {
@@ -77,35 +77,35 @@ document.addEventListener("DOMContentLoaded", function() {
    
     function rightAnswer() {        
         if (displayFlag === 0) {
-             return "canada"
+             return "canada";
         } else if (displayFlag === 1) {
-            return "germany"
+            return "germany";
         } else if (displayFlag === 2) {
-            return "ireland"
+            return "ireland";
         } else if (displayFlag === 3) {
-            return "japan"
+            return "japan";
         } else if (displayFlag === 4) {
-            return "morocco"
+            return "morocco";
         } else if (displayFlag === 5) {
-            return "spain"
+            return "spain";
         } else if (displayFlag === 6) {
-            return "france"
+            return "france";
         } else if (displayFlag === 7) {
-            return "ukraine"
+            return "ukraine";
         } else if (displayFlag === 8) {
-            return "brazil"
+            return "brazil";
         } else if (displayFlag === 9) {
-            return "australia"
+            return "australia";
         } else if (displayFlag === 10) {
-            return "croatia"
+            return "croatia";
         } else if (displayFlag === 11) {
-            return "cambodia"
+            return "cambodia";
         } else if (displayFlag === 12) {
-            return "argentina"
+            return "argentina";
         } else if (displayFlag === 13) {
-            return "georgia"
+            return "georgia";
         } else if (displayFlag === 14) {
-            return "india"
+            return "india";
         } else {
             alert("Sorry, it's a wrong country");
         }

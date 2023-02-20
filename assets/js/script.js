@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
         flagImg[14] = 'assets/images/flags/india-flag.jpg';
        
         displayFlag = Math.floor(Math.random() * flagImg.length);
-        return document.getElementById("image").innerHTML = '<img src="'+flagImg[displayFlag]+'" class="img">';
+        return document.getElementById("image").innerHTML = '<img src="'+flagImg[displayFlag]+'" class="img" alt="a flag">';
         
     }
 

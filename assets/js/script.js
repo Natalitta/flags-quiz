@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "submit") {
                 checkAnswer();
+            } else if (this.getAttribute("data-type") === "finish") {
+                finishGame();
             } else {
                 let gameType = this.getAttribute("data-type"); 
                     runGame(gameType);
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
     modal();
-    
+
     function runGame(gameType) {
 
         document.getElementById("answer-box").value = "";
@@ -120,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
     function incrementScore() {
         let oldScore = parseInt(document.getElementById("correct").innerText);
-        document.getElementById("correct").innerText = ++oldScore;
+        document.getElementById("correct").innerText = ++oldScore;       
     }
     function incrementWrongAnswer() {
         let oldScore = parseInt(document.getElementById("incorrect").innerText);
@@ -129,20 +131,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //the modal
 function modal() {
-let modal = document.getElementById("openModal");
-let btn = document.getElementById("modal");
-let span = document.getElementsByClassName("close")[0];
+    let modal = document.getElementById("openModal");
+    let btn = document.getElementById("modal");
+    let span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-span.onclick = function() {
-  modal.style.display = "none";
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    } 
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-} 
+function finishGame() {
+    alert (`Good job! Your score for this quiz is ${incrementScore().value}!`)
 }

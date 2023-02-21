@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
-    let displayFlag = null;
+    let displayFlag;
     
     for (let button of buttons) {
         button.addEventListener("click", function() {
@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
         runGame("flag");
     
     });
-
+    
+    modal();
+    
     function runGame(gameType) {
 
         document.getElementById("answer-box").value = "";
@@ -30,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
         if (gameType === "flag") {
             displayFlagImage();
-        }   else {
+        } else if (gameType === "rules") {
+            modal();
+        } else {
             alert(`Unknown game type: ${gameType}`);
             throw `Unknown game type: ${gameType}. Aborting!`;
         }
@@ -61,13 +65,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function checkAnswer() {
-        let userAnswer = document.getElementById("answer-box").value.toLowerCase();
+        let userAnswer = document.getElementById("answer-box").value.toLowerCase().trim();
         let correctAnswer = rightAnswer().toLowerCase();
         let isCorrect = userAnswer === correctAnswer;
    
     if (isCorrect) {
         alert("Well done! You got it right!");
         incrementScore();
+    } else if (userAnswer =="") {
+        alert("Please, type the country you think this flag belongs to.");
+        return false;
     } else {
         alert(`Awww... you answered ${userAnswer}. The correct country was ${correctAnswer.toUpperCase()}!`);
         incrementWrongAnswer();
@@ -119,3 +126,23 @@ document.addEventListener("DOMContentLoaded", function() {
         let oldScore = parseInt(document.getElementById("incorrect").innerText);
         document.getElementById("incorrect").innerText = ++oldScore;
     }
+
+//the modal
+function modal() {
+let modal = document.getElementById("openModal");
+let btn = document.getElementById("modal");
+let span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 
+}

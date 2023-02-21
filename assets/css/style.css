@@ -78,3 +78,12 @@ input {
     color: rgb(139, 3, 3);
     font-weight: bold;
 }
+@media only screen and (max-width: 480px) {
+
+    .game-area {
+        width: 100%;
+        }
+    .controls-area {
+        width: 70%;
+        }
+}

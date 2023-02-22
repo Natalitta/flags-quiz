@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function displayFlagImage() {
 
-        let flagImg = new Array (); 
+        let flagImg = [];
         flagImg[0] = 'assets/images/flags/canada-flag.jpg';
         flagImg[1] = 'assets/images/flags/germany-flag.jpg';
         flagImg[2] = 'assets/images/flags/ireland-flag.jpg';
@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", function() {
         flagImg[12] = 'assets/images/flags/argentina-flag.jpg';
         flagImg[13] = 'assets/images/flags/georgia-flag.jpg';
         flagImg[14] = 'assets/images/flags/india-flag.jpg';
-       
+        
         displayFlag = Math.floor(Math.random() * flagImg.length);
-        return document.getElementById("image").innerHTML = '<img src="'+flagImg[displayFlag]+'" class="img" alt="a flag">';
+        document.getElementById("image").innerHTML = '<img src="'+flagImg[displayFlag]+'" class="img" alt="a flag">';
         
     }
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     runGame("flag");
     }
-   
+    //to check correct answers  
     function rightAnswer() {        
         if (displayFlag === 0) {
              return "canada";
@@ -119,17 +119,19 @@ document.addEventListener("DOMContentLoaded", function() {
             alert("Sorry, it's a wrong country");
         }
     }
-            
+
+    //to display correct answers score       
     function incrementScore() {
         let oldScore = parseInt(document.getElementById("correct").innerText);
         document.getElementById("correct").innerText = ++oldScore;       
     }
+    //to display wrong answers score 
     function incrementWrongAnswer() {
         let oldScore = parseInt(document.getElementById("incorrect").innerText);
         document.getElementById("incorrect").innerText = ++oldScore;
     }
 
-//the modal
+//to display a pop-up message
 function modal() {
     let modal = document.getElementById("openModal");
     let btn = document.getElementById("modal");
@@ -148,7 +150,31 @@ function modal() {
     }
     } 
 }
-
+//to finish the game and reset the score
 function finishGame() {
-    alert (`Good job! Your score for this quiz is ${incrementScore().value}!`)
+    
+    let score = document.getElementById("correct").innerText;
+    let modal = document.getElementById("finish-modal");
+    
+    modal.style.display = "block";
+    document.getElementById("final-score").innerText = score;
+    resetScore();
+
+    let span = document.getElementsByClassName("close")[1];
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+}
+    
+
+//to reset the score for a new game
+function resetScore() {
+    document.getElementById("correct").innerText = 0;
+    document.getElementById("incorrect").innerText = 0;
 }

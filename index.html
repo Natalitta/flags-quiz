@@ -24,11 +24,9 @@
                 How to play <i class="fa-regular fa-circle-question"></i>
             </button>
         </div>
-        <div>
-            
-            <div id="openModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
+        <div id="openModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
                     <h2>To check your knowledge of flags: </h2>
                         <ol>
                             <li>Click on the button "GET A FLAG <i class="fa-solid fa-flag"></i>" 
@@ -38,12 +36,20 @@
                             <br>
                             <li>Click on "Verify <i class="fa-solid fa-check"></i>" button.</li>
                             <br>
-                            <li>If you got it write, you'll get a message and your score will increase.</li>  
+                            <li>If you got it right, you'll get a message and your score will increase.</li>  
                         </ol>  
-                </div>
             </div>
         </div>
-        
+        <div id="finish-modal" class="modal">
+            <div class="modal-content" id="finish-modal-div">
+                <span class="close">&times;</span>
+                    <h2>Good job!</h2>
+                    <p id="text">You have got <span id="final-score"></span> correct answers.
+                    <br>
+                    Try again, next time you'll get more.
+                </p>
+            </div>
+        </div>
         <div class="question">
             <div id="image" onclick="displayFlagImage()">
             
@@ -59,6 +65,7 @@
         <p class="scores">Correct answers: <span id="correct">  0</span></p>
         <p class="scores">Incorrect answers: <span id="incorrect">  0</span></p>
     </div>
+   
 <!--
     Ireland castle by DejaVu Designs on Freepik
     Irish flag by www.slon.pics on Freepik

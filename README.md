@@ -49,37 +49,46 @@ Flags Quiz is a game to help people learn flags of different countries. This gam
 * I would like to add all world countries' flags in the future.
 
 ## Testing
-#### The testing was done in browsers: 
+### The testing was done in browsers: 
 * Mozilla Fireworks 108.0.2
 * Google Chrome 106.0.5249.119
 * Microsoft Edge 108.0.1462.54
   
-#### Smartphones: 
+### Smartphones: 
 * Pixel 4a
 * Xiomi Redmi 8
 * iPhone 12
 
-#### Responsiveness was also tested via Developers tools for:
+### Responsiveness was also tested via Developers tools for:
 * iPhone 12 Pro
 * iPad iPadOS 14.7.11
 * Gallaxy Note 20 Android 11
 * iPhone SE 2nd gen iOS 14.6
 * Samsung Gallaxy A51/71
 
-#### Manual testing
-* I confirmed that the quiz results are always correct. I confirmed that all buttons and the input are clickable.
+### Manual testing
+#### I confirmed that the quiz results are always correct. I confirmed that all buttons and the input are clickable.
+
+#### Get a new flag test
+A new flag appears when the button is clicked. It also works if the image is clicked.
+<img src="assets/images/game-area.png" alt="Flags quiz game area">
+
+#### Empty input test
 * Java Script code prevents submitting empty input. A pop-up appears with a request to type a country name.
 <img src="assets/images/empty.png" alt="Flags Quiz test1">
 
+#### Correct answer input test
 * The quiz accepts answers typed in any case (e.g. Ireland, ireland, IRELAND) as correct, shows an alert "Well done!" and increments a new score.
 
 <img src="assets/images/correct.png" alt="Flags Quiz test2">
 
+#### Inorrect answer input test
 * If the answer is incorrect, users see an alert with the correct answer and a number of wrong answers increases.
 
 <img src="assets/images/incorrect.png" alt="Flags Quiz test3">
 <img src="assets/images/increment-score.png" alt="Flags Quiz score">
 
+#### Finish quiz and reset function test
 * If users want to finish the quiz, they should click on "Finish quiz" button. When the button is clicked a modal appeares with the score of correct answers. And the score resets.
 
 <img src="assets/images/finish.png" alt="Flags Quiz test4">

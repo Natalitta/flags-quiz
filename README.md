@@ -131,6 +131,10 @@ The site was created using Gitpod and pushed to GitHub to a remote repository.
 
 ## Credits
 
+### Code
+I learned how to code a modal from:
+<a href ="https://www.w3schools.com/howto/howto_css_modals.asp"></a>
+
 ### Content:
 * All icons were taken from Font Awesome.
 

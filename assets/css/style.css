@@ -123,10 +123,14 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+#finish-modal {
+    margin: 0 auto;
+    width: 55%;
+}
 #finish-modal-div {
     height: 200px;
-    margin-top: 30px;
-    padding-top: 20px;
+    margin: 20px auto;
+    padding-top: 20px;   
 }
 #text {
     text-align: center;
@@ -153,9 +157,12 @@ h2 {
         width: 90%; 
     }
     .btn {
-        margin: 5px auto;
+        margin: 15px auto;
     }
     .score-area {
-        margin: 20px auto;
+        margin: 70px auto;
+    }
+    #finish-modal {
+        width: 85%;
     }
 }

@@ -21,9 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     
-        runGame("flag");
-    
-    });
+        runGame("flag");    
+});
     
     modal();
 
@@ -139,16 +138,16 @@ function modal() {
 
     btn.onclick = function() {
         modal.style.display = "block";
-    }
+    };
     span.onclick = function() {
         modal.style.display = "none";
-    }
+    };
 
     window.onclick = function(event) {
         if (event.target == modal) {
         modal.style.display = "none";
     }
-    } 
+    }; 
 }
 //to finish the game and reset the score
 function finishGame() {
@@ -163,13 +162,13 @@ function finishGame() {
     let span = document.getElementsByClassName("close")[1];
     span.onclick = function() {
         modal.style.display = "none";
-    }
+    };
 
     window.onclick = function(event) {
         if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+};
 }
     
 

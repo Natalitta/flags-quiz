@@ -14,12 +14,23 @@ Flags Quiz is a game to help people learn flags of different countries. This gam
 
 <img src="assets/images/header.png" alt="Flags quiz header">
 
+* And on mobile screens it looks like this:
+
+<img src="assets/images/mobile-header.png" alt="Flags quiz header on mobiles">
+
 ### The quiz game area
-* The game gives instructions: 1) click the button "Get a flag" 2) type an answer in the input "Type the country" 3) click the button "Verify" to check the answer.
+* There is a button "How to play" which displays a pop-up with instructions: 1) click the button "Get a flag" 2) type an answer in the input "Type the country" 3) click the button "Verify" to check the answer.
+<img src="assets/images/mobile-modal.png" alt="Flags quiz game modal on mobiles">
+
 * There's also an opportunity to get a new flag image by clicking on the image itself, it can be handy for mobile users.
 * A user can use any type of case for the input, all variants will be scored as correct (e.g. Canada, canada or CANADA).
 
 <img src="assets/images/game-area.png" alt="Flags quiz game area">
+
+* And on mobile screens it looks like this:
+
+<img src="assets/images/mobile-game-area.png" alt="Flags quiz game area on mobiles">
+
 
 ### The quiz results
 * When users click on the button "Get a flag" or tap on the image they get a new flag image shown randomly by JavaScript. 
@@ -45,7 +56,8 @@ Flags Quiz is a game to help people learn flags of different countries. This gam
   
 #### Smartphones: 
 * Pixel 4a
-* Xiomi Redmi 8.
+* Xiomi Redmi 8
+* iPhone 12
 
 #### Responsiveness was also tested via Developers tools for:
 * iPhone 12 Pro
@@ -54,7 +66,24 @@ Flags Quiz is a game to help people learn flags of different countries. This gam
 * iPhone SE 2nd gen iOS 14.6
 * Samsung Gallaxy A51/71
 
-#### I confirmed that the quiz results are always correct. I confirmed that all buttons and the input are clickable.
+#### Manual testing
+* I confirmed that the quiz results are always correct. I confirmed that all buttons and the input are clickable.
+* Java Script code prevents submitting empty input. A pop-up appears with a request to type a country name.
+<img src="assets/images/empty.png" alt="Flags Quiz test1">
+
+* The quiz accepts answers typed in any case (e.g. Ireland, ireland, IRELAND) as correct, shows an alert "Well done!" and increments a new score.
+
+<img src="assets/images/correct.png" alt="Flags Quiz test2">
+
+* If the answer is incorrect, users see an alert with the correct answer and a number of wrong answers increases.
+
+<img src="assets/images/incorrect.png" alt="Flags Quiz test3">
+<img src="assets/images/increment-score.png" alt="Flags Quiz score">
+
+* If users want to finish the quiz, they should click on "Finish quiz" button. When the button is clicked a modal appeares with the score of correct answers. And the score resets.
+
+<img src="assets/images/finish.png" alt="Flags Quiz test4">
+
 
 ### Validator Testing
 * HTML: No errors were shown when passing through the official W3C HTML validator.
@@ -64,15 +93,24 @@ Flags Quiz is a game to help people learn flags of different countries. This gam
 
 <img src="assets/images/css-check.png" alt="CSS Flags quiz validation">
 
+* JS: 21 warning were found when passing through the JSHint validator about let variable.
+
+<img src="assets/images/js-hint.png" alt="JS Flags quiz validation">
+<img src="assets/images/js-hint1.png" alt="JS Flags quiz validation part 2">
+
 * Lighthouse testing shows such results:
 
 <img src="assets/images/lighthouse.png" alt="Lighthouse testing results of Flags quiz">
+
+### Bugs
+On some mobile devices a space was added automatically to the name of the country which resulted in incrementing wrong answer. To fix this problem I used .trim() method. Now spaces don't cause any issues.
 
 ### Unfixed Bugs
 No unfixed bugs.
 
 ## Deployment
 The site was created using Gitpod and pushed to GitHub to a remote repository.
+
 #### The site was deployed to GitHub pages. The steps to deploy are as follows: 
 * In the GitHub repository, navigate to the Settings tab.
 * From the menu on the left, select Pages.
@@ -88,7 +126,8 @@ The site was created using Gitpod and pushed to GitHub to a remote repository.
 * All icons were taken from Font Awesome.
 
 ### Media
-* The photos for the quiz were taken from free Internet resources (Unsplash and Freepik websites):
+The photos for the quiz were taken from free Internet resources (Unsplash and Freepik websites):
+
 * Irish flag by www.slon.pics on Freepik
 * Ukrainian flag on Freepik
 * Spanish flag Photo by Max Harlynking on Unsplash

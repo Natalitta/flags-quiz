@@ -102,10 +102,9 @@ A new flag appears when the button is clicked. It also works if the image is cli
 
 <img src="assets/images/css-check.png" alt="CSS Flags quiz validation">
 
-* JS: 21 warning were found when passing through the JSHint validator about let variable.
+* JS: 1 warning was found when passing through the JSHint validator.
 
 <img src="assets/images/js-hint.png" alt="JS Flags quiz validation">
-<img src="assets/images/js-hint1.png" alt="JS Flags quiz validation part 2">
 
 * Lighthouse testing shows such results:
 
@@ -132,8 +131,12 @@ The site was created using Gitpod and pushed to GitHub to a remote repository.
 ## Credits
 
 ### Code
+I learned the trim method from:
+
+https://www.w3schools.com/jsref/jsref_trim_string.asp
+
 I learned how to code a modal from:
-<a href ="https://www.w3schools.com/howto/howto_css_modals.asp"></a>
+https://www.w3schools.com/howto/howto_css_modals.asp
 
 ### Content:
 * All icons were taken from Font Awesome.
